@@ -1,0 +1,304 @@
+{
+  "Version": 1,
+  "ManifestType": "Build",
+  "Endpoints": [
+    {
+      "Route": "Booking-Management-system.3d95kquyp7.styles.css",
+      "AssetFile": "Booking-Management-system.styles.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001818181818"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "549"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tLtDtEH1yWFMT0L4ZfFom6g//hjpdJowx771379lcgg=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"WaUJ/d2nUACOdoeqsBh+i7BWNkHCjSDCLxBZ+ht66M4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 16:35:39 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3d95kquyp7"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WaUJ/d2nUACOdoeqsBh+i7BWNkHCjSDCLxBZ+ht66M4="
+        },
+        {
+          "Name": "label",
+          "Value": "Booking-Management-system.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "Booking-Management-system.3d95kquyp7.styles.css",
+      "AssetFile": "Booking-Management-system.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1143"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WaUJ/d2nUACOdoeqsBh+i7BWNkHCjSDCLxBZ+ht66M4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 16:35:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3d95kquyp7"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WaUJ/d2nUACOdoeqsBh+i7BWNkHCjSDCLxBZ+ht66M4="
+        },
+        {
+          "Name": "label",
+          "Value": "Booking-Management-system.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "Booking-Management-system.3d95kquyp7.styles.css.gz",
+      "AssetFile": "Booking-Management-system.styles.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "549"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tLtDtEH1yWFMT0L4ZfFom6g//hjpdJowx771379lcgg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 16:35:39 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3d95kquyp7"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tLtDtEH1yWFMT0L4ZfFom6g//hjpdJowx771379lcgg="
+        },
+        {
+          "Name": "label",
+          "Value": "Booking-Management-system.styles.css.gz"
+        }
+      ]
+    },
+    {
+      "Route": "Booking-Management-system.styles.css",
+      "AssetFile": "Booking-Management-system.styles.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001818181818"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "549"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tLtDtEH1yWFMT0L4ZfFom6g//hjpdJowx771379lcgg=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"WaUJ/d2nUACOdoeqsBh+i7BWNkHCjSDCLxBZ+ht66M4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 16:35:39 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WaUJ/d2nUACOdoeqsBh+i7BWNkHCjSDCLxBZ+ht66M4="
+        }
+      ]
+    },
+    {
+      "Route": "Booking-Management-system.styles.css",
+      "AssetFile": "Booking-Management-system.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1143"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WaUJ/d2nUACOdoeqsBh+i7BWNkHCjSDCLxBZ+ht66M4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 16:35:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WaUJ/d2nUACOdoeqsBh+i7BWNkHCjSDCLxBZ+ht66M4="
+        }
+      ]
+    },
+    {
+      "Route": "Booking-Management-system.styles.css.gz",
+      "AssetFile": "Booking-Management-system.styles.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "549"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tLtDtEH1yWFMT0L4ZfFom6g//hjpdJowx771379lcgg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 16:35:39 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tLtDtEH1yWFMT0L4ZfFom6g//hjpdJowx771379lcgg="
+        }
+      ]
+    }
+  ]
+}

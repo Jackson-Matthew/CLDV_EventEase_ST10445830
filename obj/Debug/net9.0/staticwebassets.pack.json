@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Booking-Management-system.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Booking-Management-system.3d95kquyp7.bundle.scp.css"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Booking-Management-system.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Booking-Management-system.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.Booking-Management-system.props",
+      "PackagePath": "build\\Booking-Management-system.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.Booking-Management-system.props",
+      "PackagePath": "buildMultiTargeting\\Booking-Management-system.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.Booking-Management-system.props",
+      "PackagePath": "buildTransitive\\Booking-Management-system.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
