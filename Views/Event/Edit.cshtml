@@ -1,0 +1,54 @@
+﻿@model Booking_Management_system.Models.Event
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Event</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EVENT_ID" />
+            <div class="form-group">
+                <label asp-for="EVENT_NAME" class="control-label"></label>
+                <input asp-for="EVENT_NAME" class="form-control" />
+                <span asp-validation-for="EVENT_NAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EVENT_DATE" class="control-label"></label>
+                <input asp-for="EVENT_DATE" class="form-control" type="datetime-local"
+                       value="@Model.EVENT_DATE.ToString("yyyy-MM-ddTHH:mm")" />
+                <span asp-validation-for="EVENT_DATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DESCRIPTION" class="control-label"></label>
+                <input asp-for="DESCRIPTION" class="form-control" />
+                <span asp-validation-for="DESCRIPTION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VENUE_ID" class="control-label"></label>
+                <!-- Populating the select dropdown with venues and pre-selecting the current venue -->
+                <select asp-for="VENUE_ID" class="form-control" asp-items="ViewBag.VenueList">
+                    <option value="">-- Select Venue --</option> <!-- Optional default option -->
+                </select>
+                <span asp-validation-for="VENUE_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" /> |
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

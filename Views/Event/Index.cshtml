@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Booking_Management_system.Models.Event>
+
+@{
+    ViewData["BackgroundImage"] = Url.Content("~/images/EventBGb.jpg");
+}
+
+<h1 style="color: white">Events</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Event</a>
+</p>
+<table class="table table-bordered table-hover table-dark">
+
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.EVENT_NAME)</th>
+            <th>@Html.DisplayNameFor(model => model.EVENT_DATE)</th>
+            <th>@Html.DisplayNameFor(model => model.DESCRIPTION)</th>
+            <th>@Html.DisplayNameFor(model => model.VENUE_ID)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.EVENT_NAME)</td>
+                <td>@item.EVENT_DATE.ToString("dd MMM yyyy HH:mm")</td>
+                <td>@Html.DisplayFor(modelItem => item.DESCRIPTION)</td>
+                <td>@Html.DisplayFor(modelItem => item.VENUE_ID)</td>
+                <td>
+                    <a class="btn btn-sm btn-success" href="@Url.Action("Details", new { id = item.EVENT_ID })">Details</a> |
+                    <a class="btn btn-sm btn-warning" href="@Url.Action("Edit", new { id = item.EVENT_ID })">Edit</a> |
+                    <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", new { id = item.EVENT_ID })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

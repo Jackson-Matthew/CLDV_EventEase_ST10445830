@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Booking_Management_system.Models.Venue>
+
+@{
+    ViewData["BackgroundImage"] = Url.Content("~/images/VenueBG1.jpg");
+}
+
+<h1 style="color: white">Venues</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Venue</a>
+</p>
+<table class="table table-bordered table-hover table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VENUE_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LOCATION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CAPACITY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IMAGE_URL)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VENUE_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LOCATION)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CAPACITY)
+                </td>
+               
+                <td>
+                    @if (!string.IsNullOrEmpty(item.IMAGE_URL))
+                    {
+                        <img src="@item.IMAGE_URL" alt="Venue Image" width="150" height="150" style="object-fit:cover; border-radius: 8px;" />
+                    }
+                    else
+                    {
+                        <span>No Image Available</span>
+                    }
+                <td>
+                    <a class="btn btn-sm btn-success" href="@Url.Action("Details", new { id = item.VENUE_ID })">Details</a> |
+                    <a class="btn btn-sm btn-warning" href="@Url.Action("Edit", new { id = item.VENUE_ID })">Edit</a> |
+                    <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", new { id = item.VENUE_ID })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

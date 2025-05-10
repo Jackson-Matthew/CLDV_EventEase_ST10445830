@@ -1,0 +1,40 @@
+﻿@model Booking_Management_system.Models.Booking
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BOOKING_DATE" class="control-label"></label>
+                <input asp-for="BOOKING_DATE" class="form-control" type="datetime-local" />
+                <span asp-validation-for="BOOKING_DATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EVENT_ID" class="control-label"></label>
+                <select asp-for="EVENT_ID" class ="form-control" asp-items="ViewBag.EVENT_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VENUE_ID" class="control-label"></label>
+                <select asp-for="VENUE_ID" class ="form-control" asp-items="ViewBag.VENUE_ID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" /> |
+                <a asp-action="Index" class=" btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Booking_Management_system.Models.Booking>
+
+@{
+    ViewData["BackgroundImage"] = Url.Content("~/images/BookingBG1.jpg");
+}
+
+<h1 style="color: white">Bookings</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Booking</a>
+</p>
+<table class="table table-bordered table-hover table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BOOKING_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Venue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.BOOKING_DATE.ToString("dd MMM yyyy HH:mm")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event.EVENT_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Venue.LOCATION)
+            </td>
+            <td>
+                <a asp-action="Details" class="btn btn-success" asp-route-id="@item.BOOKING_ID">Details</a> |
+                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.BOOKING_ID">Edit</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.BOOKING_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

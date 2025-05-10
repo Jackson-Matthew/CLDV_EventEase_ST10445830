@@ -1,0 +1,42 @@
+﻿@model Booking_Management_system.Models.Event
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EVENT_NAME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EVENT_NAME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EVENT_DATE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.EVENT_DATE.ToString("dd MMM yyyy HH:mm")
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DESCRIPTION)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Venue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Venue.LOCATION)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit"  class="btn btn-warning" asp-route-id="@Model?.EVENT_ID">Edit</a> |
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>

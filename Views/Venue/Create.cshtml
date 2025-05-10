@@ -1,0 +1,45 @@
+﻿@model Booking_Management_system.Models.Venue
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Venue</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VENUE_NAME" class="control-label"></label>
+                <input asp-for="VENUE_NAME" class="form-control" />
+                <span asp-validation-for="VENUE_NAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LOCATION" class="control-label"></label>
+                <input asp-for="LOCATION" class="form-control" />
+                <span asp-validation-for="LOCATION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CAPACITY" class="control-label"></label>
+                <input asp-for="CAPACITY" class="form-control" />
+                <span asp-validation-for="CAPACITY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input asp-for="ImageFile" class="form-control" type="file" />
+                <span asp-validation-for="IMAGE_URL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" /> |
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
