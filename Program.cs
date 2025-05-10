@@ -1,3 +1,4 @@
+using Azure.Storage.Blobs;
 using Booking_Management_system.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,12 @@ namespace Booking_Management_system
 
             builder.Services.AddDbContext<ApplicationDBContext>(options =>
                  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            var connectionString = builder.Configuration["AZURE_STORAGE_CONNECTION_STRING"]
+                ?? Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING");
+
+            // Register BlobServiceClient
+            builder.Services.AddSingleton(new BlobServiceClient(connectionString));
 
             var app = builder.Build();
 

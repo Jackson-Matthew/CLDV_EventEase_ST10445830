@@ -1,20 +1,21 @@
 ﻿using Booking_Management_system.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using System.IO;
 using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 
 namespace Booking_Management_system.Controllers
 {
     public class VenueController : Controller
     {
         private readonly ApplicationDBContext _context;
+        private readonly BlobServiceClient _blobServiceClient;
+        private const string ContainerName = "storagesolutions"; // Move to config if needed
 
-        public VenueController(ApplicationDBContext context)
+        public VenueController(ApplicationDBContext context, BlobServiceClient blobServiceClient)
         {
             _context = context;
+            _blobServiceClient = blobServiceClient;
         }
 
         public async Task<IActionResult> Index()
@@ -34,31 +35,23 @@ namespace Booking_Management_system.Controllers
         {
             if (ModelState.IsValid)
             {
-           
-               
-                    if (venue.ImageFile != null)
-                    {
-                        var blobUrl = await UploadImageToBlobAsync(venue.ImageFile);
-
-                        venue.IMAGE_URL = blobUrl;
-                    }
-
-                    _context.Venue.Add(venue);
-                    await _context.SaveChangesAsync();
-                    TempData["Success"] = "Venue created successfully!";
-                    return RedirectToAction(nameof(Index));
+                if (venue.ImageFile != null)
+                {
+                    venue.IMAGE_URL = await UploadImageToBlobAsync(venue.ImageFile);
                 }
-                return View(venue);
+
+                _context.Venue.Add(venue);
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Venue created successfully!";
+                return RedirectToAction(nameof(Index));
+            }
+            return View(venue);
         }
 
         public IActionResult Edit(int id)
         {
             var venue = _context.Venue.Find(id);
-            if (venue == null)
-            {
-                return NotFound();
-            }
-            return View(venue);
+            return venue == null ? NotFound() : View(venue);
         }
 
         [HttpPost]
@@ -76,15 +69,12 @@ namespace Booking_Management_system.Controllers
                 {
                     if (venue.ImageFile != null)
                     {
-                        var blobUrl = await UploadImageToBlobAsync(venue.ImageFile);
-                        venue.IMAGE_URL = blobUrl;
+                        venue.IMAGE_URL = await UploadImageToBlobAsync(venue.ImageFile);
                     }
-                    else
-                    {
 
-                    }
                     _context.Update(venue);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -92,12 +82,8 @@ namespace Booking_Management_system.Controllers
                     {
                         return NotFound();
                     }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
-                return RedirectToAction(nameof(Index));
             }
             return View(venue);
         }
@@ -105,11 +91,7 @@ namespace Booking_Management_system.Controllers
         public IActionResult Delete(int id)
         {
             var venue = _context.Venue.Find(id);
-            if (venue == null)
-            {
-                return NotFound();
-            }
-            return View(venue);
+            return venue == null ? NotFound() : View(venue);
         }
 
         [HttpPost, ActionName("Delete")]
@@ -128,38 +110,36 @@ namespace Booking_Management_system.Controllers
         public IActionResult Details(int id)
         {
             var venue = _context.Venue.Find(id);
-            if (venue == null)
-            {
-                return NotFound();
-            }
-            return View(venue);
+            return venue == null ? NotFound() : View(venue);
         }
 
         private async Task<string> UploadImageToBlobAsync(IFormFile file)
         {
-            var connectionString = "DefaultEndpointsProtocol=https;AccountName=storagesolutions;AccountKey=..."; // truncated for security
-            var containerName = "storagesolutions";
-
-            var blobServiceClient = new BlobServiceClient(connectionString);
-            var containerClient = blobServiceClient.GetBlobContainerClient(containerName);
-            var blobClient = containerClient.GetBlobClient(Guid.NewGuid() + Path.GetExtension(file.FileName));
-
-            var blobHttpHeaders = new Azure.Storage.Blobs.Models.BlobHttpHeaders
+            try
             {
-                ContentType = file.ContentType
-            };
+                var containerClient = _blobServiceClient.GetBlobContainerClient(ContainerName);
+                await containerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
 
-            using (var stream = file.OpenReadStream())
-            {
-                await blobClient.UploadAsync(stream, new Azure.Storage.Blobs.Models.BlobUploadOptions
+                var blobName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+                var blobClient = containerClient.GetBlobClient(blobName);
+
+                using (var stream = file.OpenReadStream())
                 {
-                    HttpHeaders = blobHttpHeaders
-                });
+                    await blobClient.UploadAsync(
+                        stream,
+                        new BlobUploadOptions
+                        {
+                            HttpHeaders = new BlobHttpHeaders { ContentType = file.ContentType }
+                        });
+                }
+
+                return blobClient.Uri.ToString();
             }
-
-            return blobClient.Uri.ToString();
+            catch (Exception ex)
+            {
+                // Log error here
+                throw new ApplicationException("Image upload failed", ex);
+            }
         }
-
     }
 }
-
