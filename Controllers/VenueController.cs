@@ -10,7 +10,7 @@ namespace Booking_Management_system.Controllers
     {
         private readonly ApplicationDBContext _context;
         private readonly BlobServiceClient _blobServiceClient;
-        private const string ContainerName = "storagesolutions"; // Move to config if needed
+        private const string ContainerName = "storagesolutions";
 
         public VenueController(ApplicationDBContext context, BlobServiceClient blobServiceClient)
         {
@@ -74,6 +74,7 @@ namespace Booking_Management_system.Controllers
 
                     _context.Update(venue);
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Venue Edited successfully.";
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
@@ -99,11 +100,17 @@ namespace Booking_Management_system.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var venue = await _context.Venue.FindAsync(id);
-            if (venue != null)
+            if (venue == null) return NotFound();
+
+            var hasBookings = await _context.Booking.AnyAsync(b => b.VENUE_ID == id);
+            if (hasBookings)
             {
-                _context.Venue.Remove(venue);
-                await _context.SaveChangesAsync();
+                TempData["ErrorMessage"] = "Cannot delete this venue as it has existing bookings";            
+                return RedirectToAction(nameof(Index));
             }
+            _context.Venue.Remove(venue);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Venue deleted successfully";
             return RedirectToAction(nameof(Index));
         }
 
@@ -137,7 +144,7 @@ namespace Booking_Management_system.Controllers
             }
             catch (Exception ex)
             {
-                // Log error here
+               
                 throw new ApplicationException("Image upload failed", ex);
             }
         }

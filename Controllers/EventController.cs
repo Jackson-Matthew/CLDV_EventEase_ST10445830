@@ -31,11 +31,11 @@ namespace Booking_Management_system.Controllers
 
             _context.Event.Add(@event);
             await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Event created successfully.";
             return RedirectToAction(nameof(Index));
 
 
         }
-
         public IActionResult Details(int id)
         {
             var @event = _context.Event.Include(e => e.Venue).FirstOrDefault(e => e.EVENT_ID == id);
@@ -70,16 +70,22 @@ namespace Booking_Management_system.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
-        {
+         {
             var @event = await _context.Event.FindAsync(id);
-            if (@event != null)
+            if (@event == null) return NotFound();
+
+            var hasBookings = await _context.Booking.AnyAsync(b => b.EVENT_ID == id);
+            if (hasBookings)
             {
-                _context.Event.Remove(@event);
-                await _context.SaveChangesAsync();
+                TempData["ErrorMessage"] = "Cannot delete this event as it has existing bookings.";
+                return RedirectToAction(nameof(Index));
             }
+
+            _context.Event.Remove(@event);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Event deleted successfully.";
             return RedirectToAction(nameof(Index));
         }
-        
         public async Task<IActionResult> Edit(int id)
         {
             var @event = await _context.Event.FindAsync(id);
@@ -101,6 +107,7 @@ namespace Booking_Management_system.Controllers
             }
             _context.Update(@event);
             await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Event Edited successfully.";
             return RedirectToAction(nameof(Index));
             return View(@event);
 

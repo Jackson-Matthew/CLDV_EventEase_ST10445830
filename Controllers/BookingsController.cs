@@ -18,14 +18,14 @@ namespace Booking_Management_system.Controllers
             _context = context;
         }
 
-        // GET: Bookings
+      
         public async Task<IActionResult> Index()
         {
             var applicationDBContext = _context.Booking.Include(b => b.Event).Include(b => b.Venue);
             return View(await applicationDBContext.ToListAsync());
         }
 
-        // GET: Bookings/Details/5
+       
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,7 +45,7 @@ namespace Booking_Management_system.Controllers
             return View(booking);
         }
 
-        // GET: Bookings/Create
+     
         public IActionResult Create()
         {
             ViewData["EVENT_ID"] = new SelectList(_context.Event, "EVENT_ID", "EVENT_NAME");
@@ -53,13 +53,35 @@ namespace Booking_Management_system.Controllers
             return View();
         }
 
-        // POST: Bookings/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BOOKING_ID,BOOKING_DATE,EVENT_ID,VENUE_ID")] Booking booking)
         {
+            var selectedEvent = await _context.Event.FirstOrDefaultAsync(e => e.EVENT_ID == booking.EVENT_ID);
+
+            if (selectedEvent == null)
+            {
+                ModelState.AddModelError("", "Selected event not found.");
+                ViewData["Events"] = _context.Event.ToList();
+                ViewData["Venues"] = _context.Venue.ToList();
+                return View(booking);
+            }
+
+          
+            var conflict = await _context.Booking
+                .Include(b => b.Event)
+                .AnyAsync(b => b.VENUE_ID == booking.VENUE_ID &&
+                               b.Event.EVENT_DATE.Date == selectedEvent.EVENT_DATE.Date);
+
+            if (conflict)
+            {
+                ModelState.AddModelError("", "This venue is already booked for that date.");
+                ViewData["Events"] = _context.Event.ToList();
+                ViewData["Venues"] = _context.Venue.ToList();
+                return View(booking);
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(booking);
@@ -71,7 +93,7 @@ namespace Booking_Management_system.Controllers
             return View(booking);
         }
 
-        // GET: Bookings/Edit/5
+    
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -89,9 +111,6 @@ namespace Booking_Management_system.Controllers
             return View(booking);
         }
 
-        // POST: Bookings/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("BOOKING_ID,BOOKING_DATE,EVENT_ID,VENUE_ID")] Booking booking)
@@ -126,7 +145,6 @@ namespace Booking_Management_system.Controllers
             return View(booking);
         }
 
-        // GET: Bookings/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -146,7 +164,6 @@ namespace Booking_Management_system.Controllers
             return View(booking);
         }
 
-        // POST: Bookings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

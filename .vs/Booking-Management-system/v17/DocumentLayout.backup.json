@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|c:\\users\\matth\\onedrive\\desktop\\github\\eventease_clean\\controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|solutionrelative:controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|c:\\users\\matth\\onedrive\\desktop\\github\\eventease_clean\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|solutionrelative:controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|c:\\users\\matth\\onedrive\\desktop\\github\\eventease_clean\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|c:\\users\\matth\\onedrive\\desktop\\github\\eventease_clean\\controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|solutionrelative:controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|c:\\users\\matth\\onedrive\\desktop\\github\\eventease_clean\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|c:\\users\\matth\\onedrive\\desktop\\github\\eventease_clean\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|solutionrelative:controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|c:\\users\\matth\\onedrive\\desktop\\github\\eventease_clean\\views\\venue\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|solutionrelative:views\\venue\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|c:\\users\\matth\\onedrive\\desktop\\github\\eventease_clean\\views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56E5BE5F-1224-442B-90F5-9F9766181526}|Booking-Management-system.csproj|solutionrelative:views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VenueController.cs",
-              "DocumentMoniker": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Controllers\\VenueController.cs",
-              "RelativeDocumentMoniker": "Controllers\\VenueController.cs",
-              "ToolTip": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Controllers\\VenueController.cs",
-              "RelativeToolTip": "Controllers\\VenueController.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAADwv44AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T18:34:32.172Z",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Views\\Venue\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Venue\\Index.cshtml",
+              "ToolTip": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Views\\Venue\\Index.cshtml",
+              "RelativeToolTip": "Views\\Venue\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-11T14:54:59.675Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-10T18:29:08.95Z",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Views\\Event\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Event\\Index.cshtml",
+              "ToolTip": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Views\\Event\\Index.cshtml",
+              "RelativeToolTip": "Views\\Event\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-11T14:20:34.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBEAAAAAAAAAAAAAAA==",
+              "Title": "EventController.cs",
+              "DocumentMoniker": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventController.cs",
+              "ToolTip": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Controllers\\EventController.cs",
+              "RelativeToolTip": "Controllers\\EventController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAADwv2YAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T16:35:22.686Z",
+              "WhenOpened": "2025-05-11T12:59:20.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "BookingsController.cs",
               "DocumentMoniker": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Controllers\\BookingsController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookingsController.cs",
               "ToolTip": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Controllers\\BookingsController.cs",
               "RelativeToolTip": "Controllers\\BookingsController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAswFcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T16:35:16.664Z",
+              "WhenOpened": "2025-05-11T15:18:10.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VenueController.cs",
+              "DocumentMoniker": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Controllers\\VenueController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VenueController.cs",
+              "ToolTip": "C:\\Users\\matth\\OneDrive\\Desktop\\GitHub\\EventEase_Clean\\Controllers\\VenueController.cs",
+              "RelativeToolTip": "Controllers\\VenueController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswE4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T18:34:32.172Z",
               "EditorCaption": ""
             }
           ]
