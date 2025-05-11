@@ -97,6 +97,7 @@ namespace Booking_Management_system.Controllers
             {
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Booking created successfully.";
                 return RedirectToAction(nameof(Index));
             }
             ViewData["EVENT_ID"] = new SelectList(_context.Event, "EVENT_ID", "EVENT_NAME", booking.EVENT_ID);
@@ -137,6 +138,7 @@ namespace Booking_Management_system.Controllers
                 {
                     _context.Update(booking);
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Booking Edited successfully.";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -186,6 +188,7 @@ namespace Booking_Management_system.Controllers
             }
 
             await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Booking deleted successfully.";
             return RedirectToAction(nameof(Index));
         }
 

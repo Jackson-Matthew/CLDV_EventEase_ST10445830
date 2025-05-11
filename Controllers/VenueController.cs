@@ -42,7 +42,7 @@ namespace Booking_Management_system.Controllers
 
                 _context.Venue.Add(venue);
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Venue created successfully!";
+                TempData["SuccessMessage"] = "Venue created successfully!";
                 return RedirectToAction(nameof(Index));
             }
             return View(venue);
