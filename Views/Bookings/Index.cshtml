@@ -6,36 +6,30 @@
 
 <h1 style="color: white">Bookings</h1>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New Booking</a>
-</p>
+<form asp-action="Index" method="get">
+    <div class="form-group">
+        <input type="text" name="searchString" class="form-control" placeholder="Search..." />
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Search</button>
+    <a asp-action="Create" class="btn btn-primary mt-2">Create New Booking</a>
+</form>
+
+
 <table class="table table-bordered table-hover table-dark">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BOOKING_DATE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Venue)
-            </th>
+            <th> Booking Date </th>
+            <th> Event </th>
+            <th> Venue </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @item.BOOKING_DATE.ToString("dd MMM yyyy HH:mm")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event.EVENT_NAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Venue.LOCATION)
-            </td>
+            <td> @item.BOOKING_DATE.ToString("yyyy-MM-dd") </td>
+            <td> @item.Event?.EVENT_NAME </td>
+            <td> @item.Venue?.VENUE_NAME </td>
             <td>
                 <a asp-action="Details" class="btn btn-success" asp-route-id="@item.BOOKING_ID">Details</a> |
                 <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.BOOKING_ID">Edit</a> |

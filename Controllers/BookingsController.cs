@@ -19,10 +19,21 @@ namespace Booking_Management_system.Controllers
         }
 
       
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var applicationDBContext = _context.Booking.Include(b => b.Event).Include(b => b.Venue);
-            return View(await applicationDBContext.ToListAsync());
+            var bookings = _context.Booking
+                .Include(b => b.Event)
+                .Include(b => b.Venue)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                bookings = bookings.Where(b =>
+                b.Venue.VENUE_NAME.Contains(searchString) ||
+                b.Event.EVENT_NAME.Contains(searchString));
+            }
+            return View(await bookings.ToArrayAsync());
+
         }
 
        
